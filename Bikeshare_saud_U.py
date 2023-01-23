@@ -200,6 +200,9 @@ def display_raw_data(df):
         i += 5
 
 
+def clr_screen():
+    """Clears terminal screen."""
+
 def main():
     while True:
         city, month, day = get_filters()
