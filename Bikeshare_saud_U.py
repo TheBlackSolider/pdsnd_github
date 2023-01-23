@@ -182,23 +182,17 @@ def user_stats(df):
     print('#' * 50)
 
 
-def display_raw_data(df):
-    """
-       Displays subsequent rows of data according to user answers
-       Arg:
-            df - Pandas Dataframe containing city data filtered by month and day returned from load_data() function
-       """
+def raw_data (df):
+    """Displays the data by filteration.
+    7 rows will added in each press"""
+    print('press enter to see row data, press no to skip')
+    x = 0
+    while (input()!= 'no'):
+        x = x+7
+        print(df.head(x))
 
-    i = 0
-    answer = input('\n would like to Display the first 5 rows of data? yes or no \n').lower()
-    pd.set_option('display.max_columns', None)
-    while True:
-        if answer == 'no':
-            break
-        print(df[i:i + 5])
-        answer = input('\n would like to Display the next 5 rows of data? yes or no \n').lower()
-        i += 5
-
+def clr_screen():
+    """Clears terminal screen."""
 
 def main():
     while True:
